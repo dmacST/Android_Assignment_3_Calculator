@@ -81,6 +81,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun onPercentageClick(view: View) {
+        if (currentInput.isNotEmpty()) {
+            val input = currentInput.toDouble()
+            val percentage = input / 100.0
+            currentInput = percentage.toString()
+            displayTextView.text = currentInput
+        }
+    }
+
     fun Double.isInt() = this % 1 == 0.0
 
     private fun performOperation() {
